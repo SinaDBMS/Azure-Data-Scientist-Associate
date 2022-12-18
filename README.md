@@ -28,3 +28,11 @@ Copying data to or from _Azure Blob Storage_ is done via the following tools:
 
 * __ARFF(Attribute related file format)__ is used by Weka environment
     * __Weka__ is a collection of ML algorithms for data mining tasks on Windows Server 2019
+
+
+## Azure Machine Learning Studio (Designer)
+
+### Modules
+
+* __Convert to Indicator Values__: Performs One Hot Encoding
+* __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows.
