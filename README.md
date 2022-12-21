@@ -1,6 +1,4 @@
-# Azure-Data-Scientist-Associate
-Preparation notes for DP-100 Exam
-
+# Azure specific topics
 
 ## Docker & co.
 
@@ -46,3 +44,11 @@ Copying data to or from _Azure Blob Storage_ is done via the following tools:
     * It has a poisson distribution.
     * It must be a whole number.
     * It must be positive number.
+
+# General Data Science topics
+
+## Deep Learning
+
+### Recurrent Neural Networks (RNNs)
+These types of networks are designed to take sequences of text as inputs or return sequences of text as outputs, or both. They're called recurrent because the network's hidden layers have a loop in which the output and cell state from each time step become inputs at the next time step. This recurrence serves as a form of memory.
+It allows contextual information to flow through the network so that relevant outputs from previous time steps can be applied to network operations at the current time step.
