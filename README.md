@@ -32,11 +32,21 @@ Copying data to or from _Azure Blob Storage_ is done via the following tools:
 
 ### Data Preparation Modules
 * __Add columns__: Used to add a feature to the dataset.
+* __Partition and Sample__: If the _Random Seed for Sampling_ parameter is set to 0, then the random seed is set based on the clock. 
 * __Clean missing data__: Two important substitution techniques are
     * Multivariate Imputation using Chained Equation (MICE): In contrast to univariate methods like _mean_, _median_ etc. that look at only one column to fill the missing values of that column, this method takes other columns into consideration. Read this [article](https://www.numpyninja.com/post/mice-algorithm-to-impute-missing-values-in-a-dataset).
     * PCA:
 * __Convert to Indicator Values__: Performs One Hot Encoding
 * __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows.
+
+## Azure Cognitive Services
+
+These are cloud-based AI services available though REST APIs for the people without AI or Data Science skills or knowledge. 
+Available services:
+* Vision
+* Speech
+* Language
+* Decision
 
 
 ### Regression Modules
