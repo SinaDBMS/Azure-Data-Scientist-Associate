@@ -32,7 +32,17 @@ Copying data to or from _Azure Blob Storage_ is done via the following tools:
 
 ## Azure Machine Learning Studio (Designer)
 
-### Modules
-
+### Data Preparation Modules
+* __Add columns__: Used to add a feature to the dataset.
+* __Clean missing data__: Two important substitution techniques are
+    * Multivariate Imputation using Chained Equation (MICE): In contrast to univariate methods like _mean_, _median_ etc. that look at only one column to fill the missing values of that column, this method takes other columns into consideration. Read this [article](https://www.numpyninja.com/post/mice-algorithm-to-impute-missing-values-in-a-dataset).
+    * PCA:
 * __Convert to Indicator Values__: Performs One Hot Encoding
 * __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows.
+
+
+### Regression Modules
+* __Poisson Regression__: A regression analysis used typically to model __counts__. E.g: Estimating the number of emergency service calls during an event. Projecting the number of customer inquiries subsequent to a promotion:
+    * It has a poisson distribution.
+    * It must be a whole number.
+    * It must be positive number.
