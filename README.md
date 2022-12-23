@@ -14,6 +14,20 @@ __Hardware requirements__ to enable _WSL 2_:
 Notes:
 * PostgreSQL is installed by default on Ubuntu, hence on DSVM for Ubuntu.
 
+## Compute
+
+### Compute Cluster
+
+Creation example:
+```python
+aml_comfig = AmlCompute.provisioning_configuration("STANDARD_D2_V2", min_nodes=0, max_nodes=2, vm_priority="dedicated")
+compute = ComputeTarget.create(ws, compute_name, aml_comfig)
+compute.wait_for_completion(show_output=True)
+```
+Notes:
+* Setting the _vm_priority_ to "lowpriority" may cause the cluster to be preempted due to capacity constraints
+* if min_nodes > 0, returns only after there are min_nodes provisioned
+
 ## Storage
 
 Copying data to or from _Azure Blob Storage_ is done via the following tools:
