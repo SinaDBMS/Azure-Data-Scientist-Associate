@@ -1,0 +1,1 @@
+Place your _workspace-config.json_ in this folder.
