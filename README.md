@@ -86,6 +86,10 @@ hierarchical file system.
     * **PCA**:
 * __Convert to Indicator Values__: Performs One Hot Encoding
 * __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows.
+* __Partition and Sample__: Partitions data into more datasets or creates a new sampled dataset. An example of
+  partitioning data in two Folds is as below:
+
+![Partition_Sample_example.PNG](./resources/images/Partition_Sample_example.PNG)
 
 ### Regression Modules
 
@@ -100,39 +104,45 @@ hierarchical file system.
 ### Azure Role-Based Access Control (Azure RBAC)
 
 * User roles
-  * Owners
-  * Contributors
-  * Readers
+    * Owners
+    * Contributors
+    * Readers
 * Custom roles
-  * Example:
+    * Example:
+
 ```json
     {
-        "Name": "Data Scientist Custom",
-        "IsCustom": true,
-        "Description": "Can run experiment but can't create or delete compute or deploy production endpoints.",
-        "Actions": [
-            "Microsoft.MachineLearningServices/workspaces/*/read",
-            "Microsoft.MachineLearningServices/workspaces/*/action",
-            "Microsoft.MachineLearningServices/workspaces/*/delete",
-            "Microsoft.MachineLearningServices/workspaces/*/write"
-        ],
-        "NotActions": [
-            "Microsoft.MachineLearningServices/workspaces/delete",
-            "Microsoft.MachineLearningServices/workspaces/write",
-            "Microsoft.MachineLearningServices/workspaces/computes/*/write",
-            "Microsoft.MachineLearningServices/workspaces/computes/*/delete", 
-            "Microsoft.Authorization/*",
-            "Microsoft.MachineLearningServices/workspaces/computes/listKeys/action",
-            "Microsoft.MachineLearningServices/workspaces/listKeys/action",
-            "Microsoft.MachineLearningServices/workspaces/services/aks/write",
-            "Microsoft.MachineLearningServices/workspaces/services/aks/delete",
-            "Microsoft.MachineLearningServices/workspaces/endpoints/pipelines/write"
-        ],
-        "AssignableScopes": [
-            "/subscriptions/<subscription_id>/resourceGroups/<resource_group_name>/providers/Microsoft.MachineLearningServices/workspaces/<workspace_name>"
-        ]
-    }
+  "Name": "Data Scientist Custom",
+  "IsCustom": true,
+  "Description": "Can run experiment but can't create or delete compute or deploy production endpoints.",
+  "Actions": [
+    "Microsoft.MachineLearningServices/workspaces/*/read",
+    "Microsoft.MachineLearningServices/workspaces/*/action",
+    "Microsoft.MachineLearningServices/workspaces/*/delete",
+    "Microsoft.MachineLearningServices/workspaces/*/write"
+  ],
+  "NotActions": [
+    "Microsoft.MachineLearningServices/workspaces/delete",
+    "Microsoft.MachineLearningServices/workspaces/write",
+    "Microsoft.MachineLearningServices/workspaces/computes/*/write",
+    "Microsoft.MachineLearningServices/workspaces/computes/*/delete",
+    "Microsoft.Authorization/*",
+    "Microsoft.MachineLearningServices/workspaces/computes/listKeys/action",
+    "Microsoft.MachineLearningServices/workspaces/listKeys/action",
+    "Microsoft.MachineLearningServices/workspaces/services/aks/write",
+    "Microsoft.MachineLearningServices/workspaces/services/aks/delete",
+    "Microsoft.MachineLearningServices/workspaces/endpoints/pipelines/write"
+  ],
+  "AssignableScopes": [
+    "/subscriptions/<subscription_id>/resourceGroups/<resource_group_name>/providers/Microsoft.MachineLearningServices/workspaces/<workspace_name>"
+  ]
+}
 ```
+
+## Monitor Data Drift
+
+To monitor data drift over time one needs to register a _baseline_ and a _target_ dataset. The `backfill()` method of
+the `DataDriftDetector` class is used to analyse the data drift between the baseline and target dataset.
 
 ## Azure Cognitive Services
 

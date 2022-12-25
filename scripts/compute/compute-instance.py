@@ -1,10 +1,11 @@
 from azureml.core import Workspace
 from azureml.core.compute import ComputeInstance, ComputeTarget
 from azureml.exceptions import ComputeTargetException
+import yaml
 
 ws = Workspace.from_config("../../resources/configs/workspace-config.json")
-
-compute_name = "single-instance-compute"
+config = yaml.safe_load(open("../../resources/configs/config.yaml"))
+compute_name = config['compute']['compute-instance']
 
 try:
     compute = ComputeTarget(ws, compute_name)
