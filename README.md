@@ -107,7 +107,7 @@ hierarchical file system.
     * Owners
     * Contributors
     * Readers
-* Custom roles
+* Custom roles:
     * Example:
 
 ```json
@@ -139,10 +139,18 @@ hierarchical file system.
 }
 ```
 
+The effective permissions of `Actions` that include wildcard are computed by subtracting the `NotActions` from them.
+
 ## Monitor Data Drift
 
 To monitor data drift over time one needs to register a _baseline_ and a _target_ dataset. The `backfill()` method of
 the `DataDriftDetector` class is used to analyse the data drift between the baseline and target dataset.
+
+## Tune Hyperparameters
+
+Use the `azureml.train.hyperdrive.HyperDriveConfig` class to tune the hyperparameters. it is also necessary to get a
+reference of the Azure ML run context and log the desired metric. For example if the primary metric is AUC
+then: `run.log(auc)`
 
 ## Azure Cognitive Services
 
