@@ -191,6 +191,14 @@ Available services:
     * Label encoding
     * One Hot encoding
 
+## Data Visualization
+
+### Violin Plot
+
+A mixture of box plot and kernel density plot.
+
+![Violin Plot](./resources/images/violin_plot.png)
+
 ## Model Selection
 
 ### Time Series Data
