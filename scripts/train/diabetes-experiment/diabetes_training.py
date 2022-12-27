@@ -5,13 +5,11 @@
 import os
 import argparse
 from azureml.core import Run, Dataset
-import pandas as pd
 import numpy as np
 import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
-from sklearn.metrics import roc_curve
 
 # Get the script arguments (regularization rate and training dataset ID)
 parser = argparse.ArgumentParser()
