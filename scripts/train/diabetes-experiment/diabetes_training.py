@@ -1,4 +1,4 @@
-# This script is being copied from Microsoft's tutorials. Link:
+# This script is copied from Microsoft's tutorials. Link:
 # https://github.com/MicrosoftLearning/mslearn-dp100/blob/main/05%20-%20Train%20Models.ipynb
 
 # Import libraries
