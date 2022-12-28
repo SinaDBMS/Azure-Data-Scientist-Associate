@@ -155,8 +155,7 @@ then: `run.log(auc)`
 ## Azure Cognitive Services
 
 These are cloud-based AI services available though REST APIs for the people without AI or Data Science skills or
-knowledge.
-Available services:
+knowledge. Available services:
 
 * Vision
 * Speech
@@ -199,6 +198,20 @@ A mixture of box plot and kernel density plot.
 
 ![Violin Plot](./resources/images/violin_plot.png)
 
+## ML Interpretability
+
+### Permutation Feature Importance
+
+It is a model agnostic method to infer the feature importance by measuring the decease in model score when a feature is
+replaced by random values.
+
+1. Pick a feature from the feature space of a test dataset and replace the actual values by random ones.
+2. Test the trained model against the modified test dataset and record the performance drop.
+3. Repeat the steps 1 and 2 for all the features.
+4. Sort the performance drops in ascending order.
+
+Higher performance drops indicate higher feature importance.
+
 ## Model Selection
 
 ### Time Series Data
@@ -214,6 +227,6 @@ A mixture of box plot and kernel density plot.
 
 These types of networks are designed to take sequences of text as inputs or return sequences of text as outputs, or
 both. They're called recurrent because the network's hidden layers have a loop in which the output and cell state from
-each time step become inputs at the next time step. This recurrence serves as a form of memory.
-It allows contextual information to flow through the network so that relevant outputs from previous time steps can be
-applied to network operations at the current time step.
+each time step become inputs at the next time step. This recurrence serves as a form of memory. It allows contextual
+information to flow through the network so that relevant outputs from previous time steps can be applied to network
+operations at the current time step.
