@@ -88,6 +88,8 @@ hierarchical file system.
 * __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows.
 * __Partition and Sample__: Partitions data into more datasets or creates a new sampled dataset. An example of
   partitioning data in two Folds is as below:
+* __Apply SQL Transformation__: Execute SQL query on up to three datasets as inputs: `t1`, `t2` and `t3` and returns the
+  result as a data table. The Syntax is _SQLite_.
 
 ![Partition_Sample_example.PNG](./resources/images/Partition_Sample_example.PNG)
 
@@ -98,6 +100,12 @@ hierarchical file system.
     * It has a poisson distribution.
     * It must be a whole number.
     * It must be positive number.
+
+### Python modules
+
+* __Execute Python Script__: Accepts two pandas dataframe inputs, executes a python script and returns two dataframes.
+* __Create Python Model__: Used for defining and using ML algorithms in python. The script must define a class named
+  AzureMLModel and implement the following methods: `__init__`, `train` and `predict`.
 
 ## Security
 
