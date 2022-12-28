@@ -1,7 +1,6 @@
 from azureml.core import Workspace, Model, Environment
-from azureml.core.compute import ComputeTarget, AksCompute
 from azureml.core.model import InferenceConfig
-from azureml.core.webservice import LocalWebservice, AciWebservice
+from azureml.core.webservice import AciWebservice
 
 # Load workspace
 ws = Workspace.from_config("../../resources/configs/workspace-config.json")
@@ -9,8 +8,8 @@ ws = Workspace.from_config("../../resources/configs/workspace-config.json")
 # Load a model
 model = ws.models['Diabetes']
 
-# Create Environment for local deployment
-env = Environment("LocalDeploy")
+# Create Environment for deployment
+env = Environment("aci-service-env")
 env.python.conda_dependencies.add_pip_package("joblib")
 env.python.conda_dependencies.add_pip_package("scikit-learn")
 

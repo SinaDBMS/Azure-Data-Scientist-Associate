@@ -5,11 +5,11 @@ import yaml
 
 ws = Workspace.from_config("../../resources/configs/workspace-config.json")
 config = yaml.safe_load(open("../../resources/configs/config.yaml"))
-compute_name = config['compute']['compute-cluster']
+compute_name = config['compute']['aml_compute']
 
 try:
     compute = ComputeTarget(ws, compute_name)
-    print(f"Using the existing {compute_name}.")
+    print(f"Using the existing compute '{compute_name}'.")
 except ComputeTargetException:
     print("Provisioning compute cluster...")
     aml_comfig = AmlCompute.provisioning_configuration("STANDARD_D2_V2", min_nodes=0, max_nodes=2)

@@ -24,7 +24,7 @@ if diabetes_dataset is None:
 try:
     compute = ComputeTarget(ws, compute_name)
 except ComputeTargetException:
-    print(f"Compute {compute_name} does not exist. Create one by running the script compute-cluster.py under compute.")
+    print(f"Compute {compute_name} does not exist. Create one by running the script aml-compute.py under compute.")
     sys.exit(1)
 
 # Prepare to submit the experiment

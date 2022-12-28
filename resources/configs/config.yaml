@@ -1,3 +1,4 @@
 compute:
-  compute-instance: 'single-instance-compute'
-  compute-cluster: 'AML-Compute'
+  compute_instance: 'single-instance-compute'
+  aml_compute: 'AML-Compute'
+  aks_compute: 'AKS-Compute'
