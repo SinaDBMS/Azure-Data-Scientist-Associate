@@ -238,3 +238,9 @@ both. They're called recurrent because the network's hidden layers have a loop i
 each time step become inputs at the next time step. This recurrence serves as a form of memory. It allows contextual
 information to flow through the network so that relevant outputs from previous time steps can be applied to network
 operations at the current time step.
+
+## Differential privacy
+
+Differential privacy tries to anonymize the data by introducing some noise to the dataset. A parameter named _Epsilon_ 
+(0 <= e <= 1) controls the degree of the noise added to the data and has an inverse relationship to the privacy. The 
+lower the epsilon, the higher is the noise and hence, the privacy.

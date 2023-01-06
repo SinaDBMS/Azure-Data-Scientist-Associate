@@ -6,7 +6,7 @@ import sys
 from azureml.exceptions import ComputeTargetException
 
 config = yaml.safe_load(open("../../resources/configs/config.yaml"))
-compute_name = config['compute']['compute-cluster']
+compute_name = config['compute']['compute_instance']
 
 # Load workspace
 ws = Workspace.from_config("../../resources/configs/workspace-config.json")
