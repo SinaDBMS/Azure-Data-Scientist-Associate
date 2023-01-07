@@ -85,7 +85,12 @@ hierarchical file system.
     * **MICE**: Refer to [Imputation techniques](###Imputation techniques).
     * **PCA**:
 * __Convert to Indicator Values__: Performs One Hot Encoding
-* __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows.
+* __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows. This method picks
+  the new synthetic datapoints by randomly selecting a sample from the _k-nearest neighbors_ of a sample belonging to the
+  minority class.
+    * disadvantages:
+        * Adds unwanted noise to the data
+        * Not effective for high dimensional data
 * __Partition and Sample__: Partitions data into more datasets or creates a new sampled dataset. An example of
   partitioning data in two Folds is as below:
 * __Apply SQL Transformation__: Execute SQL query on up to three datasets as inputs: `t1`, `t2` and `t3` and returns the
@@ -170,6 +175,10 @@ knowledge. Available services:
 * Language
 * Decision
 
+## Data Labeling Project
+
+Offers a central environment to coordinate, manage and track the process of dataset labeling.
+
 # General Data Science topics
 
 ## Data Preprocessing
@@ -241,6 +250,6 @@ operations at the current time step.
 
 ## Differential privacy
 
-Differential privacy tries to anonymize the data by introducing some noise to the dataset. A parameter named _Epsilon_ 
-(0 <= e <= 1) controls the degree of the noise added to the data and has an inverse relationship to the privacy. The 
+Differential privacy tries to anonymize the data by introducing some noise to the dataset. A parameter named _Epsilon_
+(0 <= e <= 1) controls the degree of the noise added to the data and has an inverse relationship to the privacy. The
 lower the epsilon, the higher is the noise and hence, the privacy.
