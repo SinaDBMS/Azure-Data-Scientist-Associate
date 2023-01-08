@@ -47,6 +47,35 @@ compute.wait_for_completion(show_output=True)
 
 ## Storage
 
+## Pipeline
+
+**Local execution** of pipelines is not supported. That means a compute-target should be specified. Example:
+
+```python
+step = PythonScriptStep(script_name="step_script.py", name="Pipeline name", source_directory="./pipeline-steps",
+                        runconfig=pipeline_run_config, compute_target=compute_instance)
+```
+
+Or the compute target could be specified in the RunConfiguration object:
+
+```python
+pipeline_run_config = RunConfiguration()
+pipeline_run_config.target = compute
+```
+
+### Pass data between pipeline steps
+
+Use `OutputFileDatasetConfig()` objects to create output datasets for a step and pass it as input to the next
+step: `output.as_input('input_data')`. Note that you can't use one instance of `OutputFileDatasetConfig` as output of
+multiple steps. For the output of each step you need a new instance of `OutputFileDatasetConfig`.
+
+### Example of a pipeline
+
+The script _submit_pipeline.py_ under _scripts/pipeline_ results in the following pipeline when viewed in Azure ML
+Studio:
+
+![Pipeline Example](resources/images/Pipeline_Example.PNG)
+
 ### Azure Blob Storage
 
 It's a storage service that enables you to store big and unstructured data such as images and videos in a single
@@ -86,7 +115,8 @@ hierarchical file system.
     * **PCA**:
 * __Convert to Indicator Values__: Performs One Hot Encoding
 * __SMOTE__: Used for oversampling. It is better than simply duplicating the underrepresented rows. This method picks
-  the new synthetic datapoints by randomly selecting a sample from the _k-nearest neighbors_ of a sample belonging to the
+  the new synthetic datapoints by randomly selecting a sample from the _k-nearest neighbors_ of a sample belonging to
+  the
   minority class.
     * disadvantages:
         * Adds unwanted noise to the data
