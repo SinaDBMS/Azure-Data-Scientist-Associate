@@ -18,6 +18,16 @@ Notes:
 
 * PostgreSQL is installed by default on Ubuntu, hence on DSVM for Ubuntu.
 
+## Experiments
+
+### Writing to files in experiments
+
+Two special directories `./outputs` and `./logs` are treated specially by azure when writing to files in there; They
+will be uploaded to the experiment:
+
+* `experiment_output = os.path.join(os.curdir, "outputs")`: Uploads the files to the _outputs_ directory. This maybe slow.
+* `experiment_logs = os.path.join(os.curdir, "logs")`:Uploads the files to the _logs_ directory in real time.
+
 ## Compute
 
 ### Compute Cluster
