@@ -25,7 +25,8 @@ Notes:
 Two special directories `./outputs` and `./logs` are treated specially by azure when writing to files in there; They
 will be uploaded to the experiment:
 
-* `experiment_output = os.path.join(os.curdir, "outputs")`: Uploads the files to the _outputs_ directory. This maybe slow.
+* `experiment_output = os.path.join(os.curdir, "outputs")`: Uploads the files to the _outputs_ directory. This maybe
+  slow.
 * `experiment_logs = os.path.join(os.curdir, "logs")`:Uploads the files to the _logs_ directory in real time.
 
 ## Compute
@@ -256,6 +257,22 @@ A mixture of box plot and kernel density plot.
 ![Violin Plot](./resources/images/violin_plot.png)
 
 ## ML Interpretability
+
+### Overview of different model interpretability techniques
+
+| Interpretability Technique                     | Type           |
+|------------------------------------------------|----------------|
+| Mimic Explainer (Global Surrogate)             | Model-Agnostic |
+| Permutation Feature Importance Explainer (PFI) | Model-Agnostic |
+| SHAP Kernel explainer                          | Model-Agnostic |
+| SHAP Tree explainer                            | Model-Specific |
+| SHAP Deep explainer                            | Model-Specific |
+| SHAP Linear explainer                          | Model-Specific |
+
+### Mimic Explainer (Global Surrogate)
+
+A technique for interpreting the prediction of complex black box models like deep neural networks by training a simple
+and interpretable model (like a linear regression) to mimic the behaviour of the complex model in question.
 
 ### Permutation Feature Importance
 
