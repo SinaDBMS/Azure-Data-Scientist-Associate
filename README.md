@@ -206,6 +206,14 @@ Use the `azureml.train.hyperdrive.HyperDriveConfig` class to tune the hyperparam
 reference of the Azure ML run context and log the desired metric. For example if the primary metric is AUC
 then: `run.log(auc)`
 
+## Azure Big Data & Analytics Services
+
+| **Service**             | **Purpose**                                                          | **Supported tools & Frameworks** |
+|-------------------------|----------------------------------------------------------------------|----------------------------------|
+| Azure Synapse Analytics | Workspace for end-2-end data warehousing & analytics                 | Data Factory, Spark, SQL, etc.   |
+| Azure HDInsight         | Fully managed analytics service                                      | Hadoop, Spark, Kafka, Hive, etc. |
+| Azure Databricks        | Analytics platform for data transformation & collaborative analytics | Spark                            |
+
 ## Azure Cognitive Services
 
 These are cloud-based AI services available though REST APIs for the people without AI or Data Science skills or
